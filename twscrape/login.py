@@ -263,6 +263,7 @@ async def login(acc: Account, cfg: LoginConfig | None = None) -> Account:
         client.headers["x-guest-token"] = guest_token
         # hardcoded value for now
         client.headers["x-client-transaction-id"] = "IZXRyQRR3L306zmpSFoGB9+VVOMOWONXKRiMPf5idu+a3jy6CQBviJ/3LLEo4wRKz9QxVSMQHrF3DeOrDCYV3X3H5izUIg"
+        print("using forked twscrape")
         rep = await login_initiate(client)
         ctx = TaskCtx(client, acc, cfg, None, imap)
         while True:
