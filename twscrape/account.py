@@ -73,5 +73,5 @@ class Account(JSONTrait):
         # client.headers["X-Client-UUID":] = "648945bf-7ca2-4326-a4e9-cb4cbba2f99b"
         if "ct0" in client.cookies:
             client.headers["x-csrf-token"] = client.cookies["ct0"]
-
+        print("twscrape-log:", "req with headers", client.headers, client.headers.multi_items())
         return client
