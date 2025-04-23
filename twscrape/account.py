@@ -68,7 +68,7 @@ class Account(JSONTrait):
         client.headers["authorization"] = TOKEN
         client.headers["X-Twitter-Active-User"] = "yes"
         client.headers["X-Twitter-Client-Language"] = "en"
-        client.headers["X-Client-Transaction-Id"] = "eD0hCT0DlVck/2twHEDA7l98KItZFCoyyCupbVx6wj6VR9BhPZKCdkjwidakXFgDXLCGC3o4WNhc3Fws0iWAO2X7LZsUew"
+        client.headers["X-Client-Transaction-Id"] = "mCj+wqpGyHwDNrMVTyaQ8kLuAV2dGmPmrBgBu34lm7/uR8RvO2tKNqjNuWKsBkGrgljoIZuSMtSIyARGZY57H37wsdZbmw"
         client.headers["X-Twitter-Auth-Type"] = "OAuth2Session"
         # client.headers["X-Client-UUID":] = "648945bf-7ca2-4326-a4e9-cb4cbba2f99b"
         if "ct0" in client.cookies:
