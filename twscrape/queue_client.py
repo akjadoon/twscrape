@@ -202,7 +202,8 @@ class QueueClient:
         logger.error("twscrape-log:", "req with headers",  self.ctx.clt.headers )
         [print(x) for x in self.ctx.clt.headers.multi_items()]
         print('xsrf', self.ctx.clt.headers.get('x-csrf-token'))
-        logger.error('xsrf', self.ctx.clt.headers.get('x-csrf-token'))
+        logger.error('xsrf-slice-1', self.ctx.clt.headers.get('x-csrf-token')[0:100])
+        logger.error('xsrf-slice-2', self.ctx.clt.headers.get('x-csrf-token')[:100])
 
         return await self.req("GET", url, params=params)
 
