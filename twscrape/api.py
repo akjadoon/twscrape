@@ -390,7 +390,6 @@ class API:
             "includePromotedContent": True,
             "withCommunity": True,
             "withVoice": True,
-            "withV2Timeline": True,
             **(kv or {}),
         }
         async with aclosing(self._gql_items(op, kv, limit=limit)) as gen:
