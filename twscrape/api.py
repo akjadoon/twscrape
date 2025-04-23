@@ -386,7 +386,7 @@ class API:
         op = OP_UserTweetsAndReplies
         kv = {
             "userId": str(uid),
-            "count": 40,
+            "count": 20,
             "includePromotedContent": True,
             "withCommunity": True,
             "withVoice": True,
