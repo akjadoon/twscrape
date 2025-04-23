@@ -201,6 +201,9 @@ class QueueClient:
     async def get(self, url: str, params: ReqParams = None) -> Response | None:
         logger.error("twscrape-log:", "req with headers",  self.ctx.clt.headers )
         [print(x) for x in self.ctx.clt.headers.multi_items()]
+        print('xsrf', self.ctx.clt.headers.get('x-csrf-token'))
+        logger.error('xsrf', self.ctx.clt.headers.get('x-csrf-token'))
+
         return await self.req("GET", url, params=params)
 
     async def req(self, method: str, url: str, params: ReqParams = None) -> Response | None:
