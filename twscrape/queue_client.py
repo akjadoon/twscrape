@@ -204,6 +204,9 @@ class QueueClient:
         print('xsrf', self.ctx.clt.headers.get('x-csrf-token'))
         logger.error('xsrf-slice-1:'+ self.ctx.clt.headers.get('x-csrf-token')[0:100])
         logger.error('xsrf-slice-2:'+ self.ctx.clt.headers.get('x-csrf-token')[100:])
+        print('cookies-queue', self.ctx.clt.cookies.items())
+        print('cookies-queue-items')
+        [print(x) for x in self.ctx.clt.cookies.items()]
 
         return await self.req("GET", url, params=params)
 
