@@ -199,10 +199,10 @@ class QueueClient:
             raise HandledError()
 
     async def get(self, url: str, params: ReqParams = None) -> Response | None:
+        logger.error("twscrape-log:", "req with headers",  self.ctx.clt.headers,  self.ctx.clt.headers)
         return await self.req("GET", url, params=params)
 
     async def req(self, method: str, url: str, params: ReqParams = None) -> Response | None:
-        logger.warning("twscrape-log:", "req with headers",  self.ctx.clt.headers,  self.ctx.clt.headers)
 
         unknown_retry, connection_retry = 0, 0
 
