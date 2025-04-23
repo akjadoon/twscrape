@@ -210,13 +210,7 @@ class QueueClient:
                 return None
 
             try:
-                rep = await ctx.clt.request(method, url, params=params,
-                 headers={
-                "x-client-transaction-id": "eD0hCT0DlVck/2twHEDA7l98KItZFCoyyCupbVx6wj6VR9BhPZKCdkjwidakXFgDXLCGC3o4WNhc3Fws0iWAO2X7LZsUew",
-                "x-twitter-auth-type":  "OAuth2Session",
-                "X-Client-UUID":  "648945bf-7ca2-4326-a4e9-cb4cbba2f99b",
-                "x-twitter-active-user": 'yes'
-                })
+                rep = await ctx.clt.request(method, url, params=params)
                 setattr(rep, "__username", ctx.acc.username)
                 await self._check_rep(rep)
 
