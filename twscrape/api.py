@@ -5,7 +5,8 @@ from httpx import Response
 
 from .accounts_pool import AccountsPool
 from .logger import set_log_level
-from .models import Tweet, User, parse_trends, parse_tweet, parse_tweets, parse_user, parse_users
+from .models import (Tweet, User, parse_trends, parse_tweet, parse_tweets,
+                     parse_user, parse_users)
 from .queue_client import QueueClient
 from .utils import encode_params, find_obj, get_by_path
 
@@ -121,7 +122,7 @@ class API:
                     params["variables"]["cursor"] = cur
                 if queue in ("SearchTimeline", "ListLatestTweetsTimeline"):
                     params["fieldToggles"] = {"withArticleRichContentState": False}
-                if queue in ("UserMedia",):
+                if queue in ("UserMedia","UserTweetsAndReplies"):
                     params["fieldToggles"] = {"withArticlePlainText": False}
 
                 rep = await client.get(f"{GQL_URL}/{op}", params=encode_params(params))
