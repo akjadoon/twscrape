@@ -200,6 +200,7 @@ class QueueClient:
 
     async def get(self, url: str, params: ReqParams = None) -> Response | None:
         logger.error("twscrape-log:", "req with headers",  self.ctx.clt.headers,  self.ctx.clt.headers)
+        raise HandledError()
         return await self.req("GET", url, params=params)
 
     async def req(self, method: str, url: str, params: ReqParams = None) -> Response | None:
